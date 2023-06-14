@@ -1,0 +1,17 @@
+import os
+
+# Especifique o caminho para a pasta onde os arquivos serão excluídos
+pasta = 'C:/'
+
+# Lista todos os arquivos na pasta
+arquivos = os.listdir(pasta)
+
+#Especificar palavra comum no nome dos arquivos que devem ser deletados
+palavra = 'thumb'
+
+#Percorre a lista de arquivos e os exclui um por um
+for arquivo in arquivos:
+    caminho_completo = os.path.join(pasta, arquivo)
+    if palavra in arquivo:
+        if os.path.isfile(caminho_completo):
+            os.remove(caminho_completo)
